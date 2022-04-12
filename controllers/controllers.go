@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/SowinskiBraeden/MyHomeCloud/render"
+	"github.com/SowinskiBraeden/gfbmb/messageBox"
 	"github.com/gofiber/fiber/v2"
 	"github.com/google/uuid"
 )
@@ -26,7 +26,7 @@ func UploadImage(c *fiber.Ctx) error {
 	err := c.SaveFile(file, fmt.Sprintf("./images/%s", image))
 	if err != nil {
 		return c.Status(fiber.StatusInternalServerError).Render("upload", fiber.Map{
-			"errorMsg": render.NewErrorBox("the image could not be saved"),
+			"errorMsg": messageBox.NewDangerBox("the image could not be saved"),
 		})
 	}
 
@@ -37,6 +37,6 @@ func UploadImage(c *fiber.Ctx) error {
 	// newImage.Album =
 
 	return c.Status(fiber.StatusNotImplemented).Render("upload", fiber.Map{
-		"errorMsg": render.NewSuccessBox("Success"),
+		"errorMsg": messageBox.NewSuccessBox("Success"),
 	})
 }

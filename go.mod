@@ -3,6 +3,7 @@ module github.com/SowinskiBraeden/MyHomeCloud
 go 1.18
 
 require (
+	github.com/SowinskiBraeden/gfbmb v0.0.0-20220411232833-d7374a8d6af0
 	github.com/gofiber/fiber/v2 v2.31.0
 	github.com/gofiber/template v1.6.26
 	github.com/google/uuid v1.3.0
